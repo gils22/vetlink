@@ -25,7 +25,7 @@
         <div class="bg-primary rounded-xl shadow-xl flex mb-6 mx-auto"
             style="background-image: url('images/bg-admin.png');">
             <div class="pl-12 py-12 flex flex-col justify-between text-white">
-                <h3>Oktober 4, 2000</h3>
+                <h3>{{ $currentDate }}</h3>
                 <div>
                     <h2>Welcome back, admin</h2>
                     <p>Always stay updated in VetLink</p>
