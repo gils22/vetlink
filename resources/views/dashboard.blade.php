@@ -17,21 +17,21 @@
 </head>
 
 <body class="font-poppins h-screen flex">
-    <div class="w-[17%]">
+    <div class=" w-[17%]">
         <x-sidebar />
     </div>
-    <section class="w-[80%]">
+    <section class=" w-[80%]">
         <x-navbar-admin />
         <div class="bg-primary rounded-xl shadow-xl flex mb-6 mx-auto"
             style="background-image: url('images/bg-admin.png');">
-            <div class="pl-12 py-12 flex flex-col justify-between text-white">
+            <div class="pl-12 py-12 flex flex-col justify-between text-white font-semibold text-xl">
                 <h3>{{ $currentDate }}</h3>
                 <div>
-                    <h2>Welcome back, admin</h2>
+                    <h2>Welcome back, Admin</h2>
                     <p>Always stay updated in VetLink</p>
                 </div>
             </div>
-            <img src="{{ asset('images/img-dashboard.png') }}" alt="" class="mx-auto">
+            <img src="{{ asset('images/img-dashboard.png') }}" alt="" class=" mx-auto">
         </div>
         <div class="flex justify-between mb-6">
             <div class="w-[30%] border-2 border-primary rounded-2xl flex flex-col justify-between p-6 shadow-md"

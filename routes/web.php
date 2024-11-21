@@ -21,3 +21,7 @@ Route::get('/login', function () {
 
 // Route untuk dashboard
 Route::get('/dashboard', [DashboardController::class, 'index']);
+
+Route::get('/calendar', function () {
+    return view('calendar');
+});
