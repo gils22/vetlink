@@ -1,4 +1,4 @@
-<nav class="flex items-center my-8 gap-6">
+<nav class="flex items-center my-5 gap-6">
     <form class="ml-auto">
         <label class="sr-only">Search</label>
         <div class="relative w-full">
