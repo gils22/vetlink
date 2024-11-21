@@ -1,4 +1,3 @@
-<!-- dashboard.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,118 +15,131 @@
     <title>VetLink</title>
 </head>
 
-<body class="font-poppins h-screen flex">
-    <div class="w-[17%]">
-        <x-sidebar />
-    </div>
-    <section class="w-[80%]">
-        <x-navbar-admin />
-        <div class="bg-primary rounded-xl shadow-xl flex mb-6 mx-auto"
-            style="background-image: url('images/bg-admin.png');">
-            <div class="pl-12 py-12 flex flex-col justify-between text-white">
-                <h3>{{ $currentDate }}</h3>
-                <div>
-                    <h2>Welcome back, admin</h2>
-                    <p>Always stay updated in VetLink</p>
-                </div>
-            </div>
-            <img src="{{ asset('images/img-dashboard.png') }}" alt="" class="mx-auto">
-        </div>
-        <div class="flex justify-between mb-6">
-            <div class="w-[30%] border-2 border-primary rounded-2xl flex flex-col justify-between p-6 shadow-md"
-                style="background-image: url('images/bg-putih.png');">
-                <div class="flex items-center justify-between gap-2">
-                    <div class="flex items-center gap-2">
-                        <img src="{{ asset('images/invoice.svg') }}" alt="">
-                        <h3 class="text-primary font-semibold">Total Invoice</h3>
-                    </div>
-                    <button>
-                        <img src="{{ asset('images/titiktiga.svg') }}" alt="">
-                    </button>
-                </div>
-                <div class=" text-textprimary">
-                    <h2 class="font-bold text-[24px]">1280</h2>
-                    <p class=" text-sm">56 more than yesterday</p>
-                </div>
-            </div>
-            <div class="w-[30%] border-2 border-primary rounded-2xl flex flex-col justify-between p-6 shadow-md"
-                style="background-image: url('images/bg-putih.png');">
-                <div class="flex items-center justify-between gap-2 mb-8">
-                    <div class="flex items-center gap-2">
-                        <img src="{{ asset('images/total-pasien.svg') }}" alt="">
-                        <h3 class="text-primary font-semibold">Total Pasien</h3>
-                    </div>
-                    <button>
-                        <img src="{{ asset('images/titiktiga.svg') }}" alt="">
-                    </button>
-                </div>
-                <div class=" text-textprimary">
-                    <h2 class="font-bold text-[24px]">587</h2>
-                    <p class=" text-sm">56 more than yesterday</p>
-                </div>
-            </div>
-            <div class="w-[30%] border-2 border-primary rounded-2xl flex flex-col justify-between p-6 shadow-md"
-                style="background-image: url('images/bg-putih.png');">
-                <div class="flex items-center justify-between gap-2 mb-8">
-                    <div class="flex items-center gap-2">
-                        <img src="{{ asset('images/janjitemu.svg') }}" alt="">
-                        <h3 class="text-primary font-semibold">Janji Temu</h3>
-                    </div>
-                    <button>
-                        <img src="{{ asset('images/titiktiga.svg') }}" alt="">
-                    </button>
-                </div>
-                <div class=" text-textprimary">
-                    <h2 class="font-bold text-[24px]">20</h2>
-                    <p class=" text-sm">56 more than yesterday</p>
-                </div>
-            </div>
-        </div>
-        </div>
-        <div class="flex h-[35%] justify-between">
-            <div class="border-2 border-primary rounded-2xl w-[65%] p-6 shadow-lg">
-                <img src="{{ asset('images/vanue.png') }}" alt="">
-            </div>
-            <div class="border-2 border-primary rounded-2xl w-[30%] p-6 shadow-lg">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="text-primary font-semibold">Janji Temu</h3>
-                    <button>
-                        <img src="{{ asset('images/titiktiga.svg') }}" alt="">
-                    </button>
-                </div>
-                <!-- Container untuk Timeline dengan scroll -->
-                <div class="overflow">
-                    <!-- Timeline Item 1 -->
-                    <div class="flex items-start mb-4">
-                        <div class="flex flex-col items-center mr-4">
-                            <div class="w-4 h-4 bg-white border-2 border-primary rounded-full my-1"></div>
-                        </div>
-                        <div>
-                            <p class="text-black font-semibold">10:00–10:30</p>
-                            <p class="text-sm text-gray-500">Catty - Persia (Gilang)</p>
-                            <p class="text-sm text-gray-500">drh Agus</p>
-                            <p class="text-sm text-gray-500">Konsultasi</p>
-                        </div>
-                    </div>
+<body class="font-poppins min-h-screen">
+    <div class="flex h-screen gap-6"> <!-- Tambahkan gap-16 untuk jarak lebih lebar -->
+        <!-- Sidebar -->
+        <aside class="w-[17%] min-w-[220px] bg-white">
+            <x-sidebar />
+        </aside>
 
-                    <!-- Timeline Item 2 -->
-                    <div class="flex items-start mb-6">
-                        <div class="flex flex-col items-center mr-4">
-                            <div class="w-4 h-4 bg-white border-2 border-primary rounded-full my-1"></div>
+        <!-- Main Content -->
+        <main class="flex-1 p-6 pl-[30px]"> <!-- pl-16 untuk padding kiri lebih besar -->
+            <!-- Navbar -->
+            <x-navbar-admin />
+
+            <!-- Hero Section -->
+            <section
+                class="bg-primary text-white rounded-xl shadow-lg flex items-center justify-between mb-8 bg-cover bg-center"
+                style="background-image: url('{{ asset('images/bg-admin.png') }}');">
+                <div class="p-12">
+                    <h3 class="text-lg mb-12">{{ $currentDate }}</h3>
+                    <h2 class="text-2xl font-bold">Welcome back, admin</h2>
+                    <p class="text-sm">Always stay updated in VetLink</p>
+                </div>
+                <img src="{{ asset('images/img-dashboard.png') }}" alt="Dashboard Illustration" class="w-[600px]">
+            </section>
+
+            <!-- Statistics Cards -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <!-- Card 1 -->
+                <div
+                    class="border-2 border-primary rounded-xl bg-white shadow-lg p-6 flex flex-col justify-between bg-cover"
+                    style="background-image: url('{{ asset('images/bg-putih.png') }}');">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <img src="{{ asset('images/invoice.svg') }}" alt="Invoice">
+                            <h3 class="text-primary font-semibold">Total Invoice</h3>
                         </div>
-                        <div>
-                            <p class=" text-black font-semibold">11:00–11:30</p>
-                            <p class="text-sm text-gray-500">Catty - Persia (Gilang)</p>
-                            <p class="text-sm text-gray-500">drh Agus</p>
-                            <p class="text-sm text-gray-500">Konsultasi</p>
+                        <button>
+                            <img src="{{ asset('images/titiktiga.svg') }}" alt="Options">
+                        </button>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-textprimary">1280</h2>
+                        <p class="text-sm text-gray-500">56 more than yesterday</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="border-2 border-primary rounded-xl bg-white shadow-lg p-6 flex flex-col justify-between bg-cover"
+                    style="background-image: url('{{ asset('images/bg-putih.png') }}');">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <img src="{{ asset('images/total-pasien.svg') }}" alt="Pasien">
+                            <h3 class="text-primary font-semibold">Total Pasien</h3>
+                        </div>
+                        <button>
+                            <img src="{{ asset('images/titiktiga.svg') }}" alt="Options">
+                        </button>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-textprimary">587</h2>
+                        <p class="text-sm text-gray-500">56 more than yesterday</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="border-2 border-primary rounded-xl bg-white shadow-lg p-6 flex flex-col justify-between bg-cover"
+                    style="background-image: url('{{ asset('images/bg-putih.png') }}');">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <img src="{{ asset('images/janjitemu.svg') }}" alt="Janji Temu">
+                            <h3 class="text-primary font-semibold">Janji Temu</h3>
+                        </div>
+                        <button>
+                            <img src="{{ asset('images/titiktiga.svg') }}" alt="Options">
+                        </button>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-textprimary">20</h2>
+                        <p class="text-sm text-gray-500">56 more than yesterday</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts and Timeline -->
+            <section class="flex flex-wrap gap-6">
+                <!-- Chart -->
+                <div class="flex-1 border-2 border-primary rounded-xl bg-white shadow-lg p-6">
+                    <img src="{{ asset('images/vanue.png') }}" alt="Chart">
+                </div>
+
+                <!-- Timeline -->
+                <div class="w-full md:w-[30%] border-2 border-primary rounded-xl bg-white shadow-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-primary font-semibold">Janji Temu</h3>
+                        <button>
+                            <img src="{{ asset('images/titiktiga.svg') }}" alt="Options">
+                        </button>
+                    </div>
+                    <div class="space-y-4">
+                        <!-- Timeline Item -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-4 h-4 bg-white border-2 border-primary rounded-full"></div>
+                            <div>
+                                <p class="font-semibold text-black">10:00–10:30</p>
+                                <p class="text-sm text-gray-500">Catty - Persia (Gilang)</p>
+                                <p class="text-sm text-gray-500">drh Agus</p>
+                                <p class="text-sm text-gray-500">Konsultasi</p>
+                            </div>
+                        </div>
+                        <!-- Timeline Item -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-4 h-4 bg-white border-2 border-primary rounded-full"></div>
+                            <div>
+                                <p class="font-semibold text-black">11:00–11:30</p>
+                                <p class="text-sm text-gray-500">Catty - Persia (Gilang)</p>
+                                <p class="text-sm text-gray-500">drh Agus</p>
+                                <p class="text-sm text-gray-500">Konsultasi</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        </div>
-        </div>
-    </section>
+            </section>
+        </main>
+    </div>
 </body>
 
 </html>
