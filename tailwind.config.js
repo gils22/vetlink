@@ -33,6 +33,9 @@ export default {
                     '100%': { opacity: '1', transform: 'translateX(0)' },
                 },
             },
+            boxShadow: {
+        'hover-timbul': '0 10px 15px rgba(0, 0, 0, 0.2)',
+      },
         },
     },
     plugins: [],

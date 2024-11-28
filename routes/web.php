@@ -22,6 +22,22 @@ Route::get('/login', function () {
 // Route untuk dashboard
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
-Route::get('/calendar', function () {
-    return view('calendar');
+Route::get('/kalender', function () {
+    return view('kalender');
+});
+
+Route::get('/datadokter', function () {
+    return view('datadokter');
+});
+
+Route::get('/owners', function () {
+    return view('owners');
+});
+
+Route::get('/patient', function () {
+    return view('patient');
+});
+
+Route::get('/jadwal', function () {
+    return view('jadwal');
 });

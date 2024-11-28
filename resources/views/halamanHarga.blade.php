@@ -39,7 +39,8 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
             <!-- Paket 3 Bulan -->
-            <div class="border-2 border-primary rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition">
+            <div
+                class="relative border-2 border-primary rounded-lg p-6 text-center shadow-lg hover:shadow-2xl transition hover:-translate-y-2">
                 <h3 class="text-2xl font-semibold text-primary mb-4">Paket 3 Bulan</h3>
                 <p class="text-gray-600 mb-6">Langganan selama 3 bulan dengan akses ke semua fitur.</p>
                 <div class="text-4xl font-bold text-primary mb-6">Rp 300,000</div>
@@ -84,7 +85,7 @@
 
             <!-- Paket 6 Bulan  -->
             <div
-                class="border-4 border-primary bg-primary text-white rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition transform scale-105">
+                class="relative border-4 border-primary bg-primary text-white rounded-lg p-6 text-center shadow-lg hover:shadow-2xl transform scale-105 transition hover:-translate-y-2">
                 <h3 class="text-2xl font-semibold mb-4">Paket 6 Bulan</h3>
                 <p class="mb-6">Langganan selama 6 bulan dan hemat lebih banyak!</p>
                 <div class="text-4xl font-bold mb-6">Rp 550,000</div>
@@ -128,7 +129,8 @@
             </div>
 
             <!-- Paket 12 Bulan -->
-            <div class="border-2 border-primary rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition">
+            <div
+                class="relative border-2 border-primary rounded-lg p-6 text-center shadow-lg hover:shadow-2xl transition hover:-translate-y-2">
                 <h3 class="text-2xl font-semibold text-primary mb-4">Paket 12 Bulan</h3>
                 <p class="text-gray-600 mb-6">Langganan selama 12 bulan dengan harga terbaik.</p>
                 <div class="text-4xl font-bold text-primary mb-6">Rp 1,000,000</div>

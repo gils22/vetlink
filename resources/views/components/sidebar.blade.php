@@ -4,7 +4,7 @@
     </div>
     <div class="flex flex-col justify-between h-[85%]">
         <div>
-            <div
+            <a href="/dashboard"
                 class="flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold"">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -23,7 +23,7 @@
                     </g>
                 </svg>
                 <h3 class="ml-3">Dashboard</h3>
-            </div>
+            </a>
             <div class="flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold"
                 onclick="dropdown()">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
@@ -63,16 +63,21 @@
                 </svg>
             </div>
             <div class="text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 hidden" id="submenu">
-                <h1
-                    class="cursor-pointer p-2 ml-8 h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold">
-                    &#8226 Owners
-                </h1>
-                <h1
-                    class="cursor-pointer p-2 ml-8 h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold">
-                    &#8226 Patient
-                </h1>
+                <a href="/owners">
+                    <h1
+                        class="cursor-pointer p-2 ml-8 h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold">
+                        &#8226 Owners
+                    </h1>
+                </a>
+
+                <a href="/patient">
+                    <h1
+                        class="cursor-pointer p-2 ml-8 h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold">
+                        &#8226 Patient
+                    </h1>
+                </a>
             </div>
-            <div
+            <a href="/datadokter"
                 class="flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold">
                 <svg fill="#ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -84,8 +89,8 @@
                     </g>
                 </svg>
                 <h3 class="ml-3 text-white">Doctor</h3>
-            </div>
-            <div
+            </a>
+            <a href="/jadwal"
                 class="flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold">
                 <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6"
                     xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"
@@ -121,7 +126,7 @@
                     </g>
                 </svg>
                 <h3 class="ml-3 text-white">Schedule</h3>
-            </div>
+            </a>
             <div
                 class="flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
@@ -186,7 +191,7 @@
             </div>
         </div>
         <div>
-            <button
+            <a href="/"
                 class="flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -201,7 +206,7 @@
                     </g>
                 </svg>
                 <h3 class="ml-3 text-white">Logout</h3>
-            </button>
+            </a>
         </div>
         <script>
             function dropdown() {
