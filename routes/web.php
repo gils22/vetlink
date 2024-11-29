@@ -30,12 +30,16 @@ Route::get('/datadokter', function () {
     return view('datadokter');
 });
 
-Route::get('/owners', function () {
+Route::get('clients/owners', function () {
     return view('owners');
 });
 
 Route::get('/patient', function () {
     return view('patient');
+});
+
+Route::get('clients/owners/tambahOwners', function () {
+    return view('contents/tambahOwners');
 });
 
 Route::get('/jadwal', function () {

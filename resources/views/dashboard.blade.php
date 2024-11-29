@@ -16,9 +16,9 @@
 </head>
 
 <body class="font-poppins min-h-screen">
-    <div class="flex h-screen gap-6"> <!-- Tambahkan gap-16 untuk jarak lebih lebar -->
+    <div class="flex h-screen"> <!-- Tambahkan gap-16 untuk jarak lebih lebar -->
         <!-- Sidebar -->
-        <aside class="w-[17%] min-w-[220px] bg-white">
+        <aside class="">
             <x-sidebar />
         </aside>
 

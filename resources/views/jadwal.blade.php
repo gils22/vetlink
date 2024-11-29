@@ -16,9 +16,9 @@
 </head>
 
 <body class="font-poppins">
-    <div class="flex h-screen gap-6"> <!-- Tambahkan gap-16 untuk jarak lebih lebar -->
+    <div class="flex h-screen"> <!-- Tambahkan gap-16 untuk jarak lebih lebar -->
         <!-- Sidebar -->
-        <aside class="w-[17%] min-w-[220px] bg-white">
+        <aside class="">
             <x-sidebar />
         </aside>
 
@@ -34,12 +34,12 @@
                 </div>
                 <a href="kalender">
                     <button
-                        class="bg-primary text-white py-2 px-4 rounded-lg hover:bg-indigo-600 focus:outline-none transition">
+                        class="border-2 border-primary bg-primary text-white rounded-lg px-6 py-3 shadow-lg hover:-translate-y-1 transform transition duration-300">
                         Add Jadwal
                     </button>
                 </a>
             </div>
-            <div class="bg-white rounded-lg shadow-lg p-6 md:p-12 h-[710px]">
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-12 h-[720px]">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 h-[350px]">
                 </div>
             </div>

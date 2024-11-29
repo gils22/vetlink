@@ -1,9 +1,9 @@
-<aside class="bg-primary rounded-3xl h-[94%] w-56 mx-8 my-8 overflow-hidden">
+<aside class="bg-primary rounded-3xl h-[94%] w-64 mx-8 my-8 shadow-2xl overflow-hidden text-lg">
     <div class="flex ml-4">
         <img src="{{ asset('images/logo-app-putih.png') }}" alt="" class=" h-12 my-4">
     </div>
     <div class="flex flex-col justify-between h-[85%]">
-        <div>
+        <div class="flex flex-col gap-2">
             <a href="/dashboard"
                 class="flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold"">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
@@ -51,7 +51,7 @@
                     </g>
                 </svg>
                 <h3 class="ml-3 text-white">Clients</h3>
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 ml-16"
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 ml-20"
                     id="arrow">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -63,7 +63,7 @@
                 </svg>
             </div>
             <div class="text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 hidden" id="submenu">
-                <a href="/owners">
+                <a href="/clients/owners">
                     <h1
                         class="cursor-pointer p-2 ml-8 h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold">
                         &#8226 Owners

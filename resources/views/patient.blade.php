@@ -16,9 +16,9 @@
 </head>
 
 <body class="font-poppins">
-    <div class="flex h-screen gap-6"> <!-- Tambahkan gap-16 untuk jarak lebih lebar -->
+    <div class="flex h-screen"> <!-- Tambahkan gap-16 untuk jarak lebih lebar -->
         <!-- Sidebar -->
-        <aside class="w-[17%] min-w-[220px] bg-white">
+        <aside class="">
             <x-sidebar />
         </aside>
 
@@ -34,7 +34,7 @@
                     <p class="text-gray-500 text-sm">Clients / Patient</p>
                 </div>
                 <button
-                    class="bg-primary text-white py-2 px-4 rounded-lg hover:bg-indigo-600 focus:outline-none transition">
+                    class="border-2 border-primary bg-primary text-white rounded-lg px-6 py-3 shadow-lg hover:-translate-y-1 transform transition duration-300">
                     Add Pet
                 </button>
             </div>

@@ -1,5 +1,5 @@
 {
     "version": 2,
     "public": "./public",
-    "routes": [{ "src": "/(.*)", "dest": "/halamanAwal.blade.php" }]
+    "routes": [{ "src": "/(.*)", "dest": "/index.php" }]
 }
