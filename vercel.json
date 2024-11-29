@@ -13,8 +13,6 @@
         { "src": "/videos/(.*)", "dest": "/public/videos/" },
         { "src": "/(.*)", "dest": "/api/index.php" }
     ],
-    "public": true,
-    "buildCommand": "vite build",
     "outputDirectory": "public",
     "env": {
         "APP_ENV": "production",
