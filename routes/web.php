@@ -45,3 +45,15 @@ Route::get('clients/owners/tambahOwners', function () {
 Route::get('/jadwal', function () {
     return view('jadwal');
 });
+
+Route::get('/iventory', function () {
+    return view('iventory');
+});
+
+Route::get('/invoice', function () {
+    return view('invoice');
+});
+
+Route::get('/reports', function () {
+    return view('reports');
+});

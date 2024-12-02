@@ -15,7 +15,7 @@
     <title>VetLink</title>
 </head>
 
-<body class="font-poppins min-h-screen">
+<body class="font-poppins min-h-screen bg-bgprimary">
     <div class="flex h-screen"> <!-- Tambahkan gap-16 untuk jarak lebih lebar -->
         <!-- Sidebar -->
         <aside class="">
@@ -45,8 +45,7 @@
                     <!-- Statistics Cards -->
                     <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         <!-- Card 1 -->
-                        <div
-                            class="border-2 border-primary rounded-xl bg-white shadow-lg p-4 flex flex-col justify-between">
+                        <div class="border-2 rounded-2xl bg-white shadow-lg p-4 flex flex-col justify-between">
                             <div class="flex items-center gap-2">
                                 <img src="{{ asset('images/invoice.svg') }}" alt="Invoice">
                                 <h3 class="text-primary font-semibold">Total Invoice</h3>
@@ -58,8 +57,7 @@
                         </div>
 
                         <!-- Card 2 -->
-                        <div
-                            class="border-2 border-primary rounded-xl bg-white shadow-lg p-4 flex flex-col justify-between">
+                        <div class="border-2 rounded-2xl bg-white shadow-lg p-4 flex flex-col justify-between">
                             <div class="flex items-center gap-2">
                                 <img src="{{ asset('images/total-pasien.svg') }}" alt="Patient">
                                 <h3 class="text-primary font-semibold">Total Patient</h3>
@@ -71,8 +69,7 @@
                         </div>
 
                         <!-- Card 3 -->
-                        <div
-                            class="border-2 border-primary rounded-xl bg-white shadow-lg p-4 flex flex-col justify-between">
+                        <div class="border-2 rounded-2xl bg-white shadow-lg p-4 flex flex-col justify-between">
                             <div class="flex items-center gap-2">
                                 <img src="{{ asset('images/janjitemu.svg') }}" alt="Appointment">
                                 <h3 class="text-primary font-semibold">Appointment</h3>
@@ -86,8 +83,7 @@
 
                     <!-- Chart Section -->
                     <section class="grid grid-cols-1 gap-4">
-                        <div
-                            class="border-2 border-primary rounded-xl bg-white shadow-lg p-6 h-[400px] flex flex-col justify-between">
+                        <div class="border-2 rounded-xl bg-white shadow-lg p-6 h-[395px] flex flex-col justify-between">
                             <h3 class="text-primary font-semibold mb-4 text-lg">Total Pasien Mingguan</h3>
                         </div>
                     </section>
@@ -95,31 +91,35 @@
                 </div>
 
                 <!-- Timeline Section -->
-                <div class="bg-white border-2 border-primary rounded-xl shadow-lg p-6 max-h-[810px] overflow-y-auto">
+                <div class="bg-white border-2 rounded-xl shadow-lg p-6 max-h-[810px] overflow-y-auto">
                     <h3 class="text-primary font-bold mb-4">Jadwal Hari Ini</h3>
                     <div class="space-y-4">
-                        <div class="p-4 bg-indigo-50 rounded-lg shadow">
+                        <div
+                            class="p-4 bg-indigo-50 rounded-lg shadow hover:-translate-x-2 transition-transform ease-in duration-300">
                             <h4 class="font-bold text-gray-700">10:00 - 10:30</h4>
                             <p class="text-sm text-gray-500">Catty - Persia (Gilang)</p>
                             <p class="text-sm text-gray-500">Dokter: drh Agus</p>
                             <span
                                 class="inline-block px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-600 rounded">Konsultasi</span>
                         </div>
-                        <div class="p-4 bg-indigo-50 rounded-lg shadow">
+                        <div
+                            class="p-4 bg-indigo-50 rounded-lg shadow hover:-translate-x-2 transition-transform ease-in duration-300">
                             <h4 class="font-bold text-gray-700">11:00 - 11:30</h4>
                             <p class="text-sm text-gray-500">Milo - Bulldog (Agus)</p>
                             <p class="text-sm text-gray-500">Dokter: drh Lani</p>
                             <span
                                 class="inline-block px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-600 rounded">Konsultasi</span>
                         </div>
-                        <div class="p-4 bg-indigo-50 rounded-lg shadow">
+                        <div
+                            class="p-4 bg-indigo-50 rounded-lg shadow hover:-translate-x-2 transition-transform ease-in duration-300">
                             <h4 class="font-bold text-gray-700">13:00 - 13:30</h4>
                             <p class="text-sm text-gray-500">Bobby - Golden Retriever (Tina)</p>
                             <p class="text-sm text-gray-500">Dokter: drh Sarah</p>
                             <span
                                 class="inline-block px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-600 rounded">Checkup</span>
                         </div>
-                        <div class="p-4 bg-indigo-50 rounded-lg shadow">
+                        <div
+                            class="p-4 bg-indigo-50 rounded-lg shadow hover:-translate-x-2 transition-transform ease-in duration-300">
                             <h4 class="font-bold text-gray-700">15:00 - 15:30</h4>
                             <p class="text-sm text-gray-500">Lucky - Shih Tzu (Rama)</p>
                             <p class="text-sm text-gray-500">Dokter: drh Indra</p>

@@ -15,8 +15,8 @@
     <title>VetLink</title>
 </head>
 
-<body class="font-poppins">
-    <div class="flex h-screen"> <!-- Tambahkan gap-16 untuk jarak lebih lebar -->
+<body class="font-poppins bg-bgprimary">
+    <div class="flex h-screen">
         <!-- Sidebar -->
         <aside class="">
             <x-sidebar />
@@ -28,7 +28,7 @@
             <x-navbar-admin />
 
             <!-- Header Section -->
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-between mb-6">
                 <div>
                     <h1 class="text-3xl font-semibold mb-2">Data Patient</h1>
                     <p class="text-gray-500 text-sm">Clients / Patient</p>
@@ -38,12 +38,131 @@
                     Add Pet
                 </button>
             </div>
-            <div class="bg-white rounded-lg shadow-lg p-6 md:p-12 h-[710px]">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 h-[350px]">
+
+            <!-- Tabel -->
+            <div class="bg-white rounded-2xl shadow-xl p-6 overflow-x-auto h-[710px]">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-semibold">Pet List</h2>
+                    <div class="flex justify-end items-center mb-4 gap-4">
+                        <div class="relative w-48">
+                            <select
+                                class="w-full border rounded-lg shadow-md px-3 py-2 pr-10 bg-white appearance-none focus:outline-none focus:ring-2 focus:ring-primary">
+                                <option>Species</option>
+                                <option>Cat</option>
+                                <option>Dog</option>
+                            </select>
+                            <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                                <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="relative w-48">
+                            <select
+                                class="w-full border rounded-lg shadow-md px-3 py-2 pr-10 bg-white appearance-none focus:outline-none focus:ring-2 focus:ring-primary">
+                                <option>Gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                            <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                                <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <table class="w-full text-left bg-white rounded-lg overflow-hidden">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="py-3 px-4 ">No-RM</th>
+                            <th class="py-3 px-4 ">Name</th>
+                            <th class="py-3 px-4 ">Species</th>
+                            <th class="py-3 px-4 ">Breed</th>
+                            <th class="py-3 px-4 ">Gender</th>
+                            <th class="py-3 px-4 ">Age</th>
+                            <th class="py-3 px-4 text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data Row -->
+                        <tr>
+                            <td class="py-3 px-4 ">00001</td>
+                            <td class="py-3 px-4 ">Catty</td>
+                            <td class="py-3 px-4 ">Cat</td>
+                            <td class="py-3 px-4 ">Anggora</td>
+                            <td class="py-3 px-4 ">Male</td>
+                            <td class="py-3 px-4 ">2 Years</td>
+                            <td class="py-3 px-4 flex gap-2 justify-center">
+                                <button class="text-indigo-600 hover:text-indigo-800 transition p-2 rounded-lg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mx-2"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path
+                                            d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                                        <path fill-rule="evenodd"
+                                            d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                <button class="text-red-600 hover:text-red-800 transition p-2 rounded-lg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-700"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="bg-bgprimary">
+                            <td class="py-3 px-4 ">00002</td>
+                            <td class="py-3 px-4 ">Anabul</td>
+                            <td class="py-3 px-4 ">Cat</td>
+                            <td class="py-3 px-4 ">Persia</td>
+                            <td class="py-3 px-4 ">Female</td>
+                            <td class="py-3 px-4 ">2 Years</td>
+                            <td class="py-3 px-4 flex gap-2 justify-center">
+                                <button class="text-indigo-600 hover:text-indigo-800 transition p-2 rounded-lg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mx-2"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path
+                                            d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                                        <path fill-rule="evenodd"
+                                            d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                <button class="text-red-600 hover:text-red-800 transition p-2 rounded-lg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-700"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- Tambahkan baris data lainnya di sini -->
+                    </tbody>
+                </table>
+
+                <!-- Pagination -->
+                <div class="flex justify-between items-center mt-4">
+                    <span class="text-sm text-gray-500">Showing 1-10 of 78</span>
+                    <div class="flex gap-1">
+                        <button
+                            class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded hover:bg-gray-200">Prev</button>
+                        <button
+                            class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded hover:bg-gray-200">Next</button>
+                    </div>
                 </div>
             </div>
         </main>
+    </div>
 </body>
+
 
 
 

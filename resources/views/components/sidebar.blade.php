@@ -1,6 +1,6 @@
 <aside class="bg-primary rounded-3xl h-[94%] w-64 mx-8 my-8 shadow-2xl overflow-hidden text-lg">
-    <div class="flex ml-4">
-        <img src="{{ asset('images/logo-app-putih.png') }}" alt="" class=" h-12 my-4">
+    <div class="flex ml-5">
+        <img src="{{ asset('images/logo-app-putih.png') }}" alt="" class="h-12 my-4">
     </div>
     <div class="flex flex-col justify-between h-[85%]">
         <div class="flex flex-col gap-2">
@@ -25,7 +25,7 @@
                 <h3 class="ml-3">Dashboard</h3>
             </a>
             <div class="flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold"
-                onclick="dropdown()">
+                onclick="toggleDropdown('submenu', 'arrow')">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -53,13 +53,9 @@
                 <h3 class="ml-3 text-white">Clients</h3>
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 ml-20"
                     id="arrow">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <path
-                            d="M17.9188 8.17969H11.6888H6.07877C5.11877 8.17969 4.63877 9.33969 5.31877 10.0197L10.4988 15.1997C11.3288 16.0297 12.6788 16.0297 13.5088 15.1997L15.4788 13.2297L18.6888 10.0197C19.3588 9.33969 18.8788 8.17969 17.9188 8.17969Z"
-                            fill="#ffffff"></path>
-                    </g>
+                    <path
+                        d="M17.9188 8.17969H11.6888H6.07877C5.11877 8.17969 4.63877 9.33969 5.31877 10.0197L10.4988 15.1997C11.3288 16.0297 12.6788 16.0297 13.5088 15.1997L15.4788 13.2297L18.6888 10.0197C19.3588 9.33969 18.8788 8.17969 17.9188 8.17969Z"
+                        fill="#ffffff"></path>
                 </svg>
             </div>
             <div class="text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 hidden" id="submenu">
@@ -77,6 +73,7 @@
                     </h1>
                 </a>
             </div>
+
             <a href="/datadokter"
                 class="flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold">
                 <svg fill="#ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
@@ -127,7 +124,7 @@
                 </svg>
                 <h3 class="ml-3 text-white">Schedule</h3>
             </a>
-            <div
+            <a href="/iventory"
                 class="flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -145,8 +142,8 @@
                     </g>
                 </svg>
                 <h3 class="ml-3 text-white">Inventory</h3>
-            </div>
-            <div
+            </a>
+            <a href="/invoice"
                 class="flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -172,8 +169,8 @@
                     </g>
                 </svg>
                 <h3 class="ml-3 text-white">Invoice</h3>
-            </div>
-            <div
+            </a>
+            <a href="/reports"
                 class="flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -188,7 +185,7 @@
                     </g>
                 </svg>
                 <h3 class="ml-3 text-white">Reports</h3>
-            </div>
+            </a>
         </div>
         <div>
             <a href="/"
@@ -209,15 +206,34 @@
             </a>
         </div>
         <script>
-            function dropdown() {
-                const arrow = document.getElementById("arrow");
-                // Toggle the class to rotate the arrow
-                arrow.classList.toggle("transform");
+            function toggleDropdown(submenuId, arrowId) {
+                const submenu = document.getElementById(submenuId);
+                const arrow = document.getElementById(arrowId);
+
+                // Toggle visibility and rotation
+                submenu.classList.toggle("hidden");
                 arrow.classList.toggle("rotate-180");
 
-                const submenu = document.getElementById("submenu");
-                submenu.classList.toggle("hidden");
-                // Show/hide the submenu
+                // Save the state to localStorage
+                const isVisible = !submenu.classList.contains("hidden");
+                localStorage.setItem(`dropdown-${submenuId}`, isVisible);
             }
+
+            function restoreDropdown(submenuId, arrowId) {
+                const submenu = document.getElementById(submenuId);
+                const arrow = document.getElementById(arrowId);
+
+                // Retrieve the state from localStorage
+                const isVisible = localStorage.getItem(`dropdown-${submenuId}`) === "true";
+                if (isVisible) {
+                    submenu.classList.remove("hidden");
+                    arrow.classList.add("rotate-180");
+                }
+            }
+
+            // Restore dropdown state on page load
+            document.addEventListener("DOMContentLoaded", () => {
+                restoreDropdown("submenu", "arrow");
+            });
         </script>
 </aside>

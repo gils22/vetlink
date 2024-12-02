@@ -15,7 +15,7 @@
     <title>VetLink</title>
 </head>
 
-<body class="font-poppins">
+<body class="font-poppins bg-bgprimary">
     <div class="flex h-screen"> <!-- Tambahkan gap-16 untuk jarak lebih lebar -->
         <!-- Sidebar -->
         <aside class="">
@@ -40,13 +40,13 @@
             </div>
 
             <!-- Doctor Cards Section -->
-            <div class="bg-white rounded-lg shadow-lg p-6 md:p-12 h-[710px]">
+            <div class="bg-white rounded-2xl shadow-xl p-6 md:p-12 h-[710px]">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 h-[350px] mx-8">
                     <!-- Doctor Card 1 -->
                     <div
                         class="bg-white border-2 border-gray-200 rounded-lg p-12 shadow-md hover:shadow-lg transition flex flex-col items-center text-center">
                         <img src="{{ asset('images/profile.png') }}" alt="Doctor Avatar"
-                            class="w-24 h-24 rounded-full mb-4 shadow-lg bg-gray-200">
+                            class="w-24 h-24 border-4 rounded-full mb-4 shadow-lg bg-gray-200">
                         <h3 class="text-lg font-bold text-gray-700">drh. Gilang Arya</h3>
                         <p class="text-gray-500 text-sm">Doctor</p>
                         <p class="text-gray-400 text-sm">gilangarya@gmail.com</p>
@@ -56,7 +56,7 @@
                     <div
                         class="bg-white border-2 border-gray-200 rounded-lg p-12 shadow-md hover:shadow-lg transition flex flex-col items-center text-center">
                         <img src="{{ asset('images/profile.png') }}" alt="Doctor Avatar"
-                            class="w-24 h-24 rounded-full mb-4 shadow-lg bg-gray-200">
+                            class="w-24 h-24 border-4 rounded-full mb-4 shadow-lg bg-gray-200">
                         <h3 class="text-lg font-bold text-gray-700">drh. Siti Nurjanah</h3>
                         <p class="text-gray-500 text-sm">Doctor</p>
                         <p class="text-gray-400 text-sm">siti.nurjanah@gmail.com</p>
@@ -66,7 +66,7 @@
                     <div
                         class="bg-white border-2 border-gray-200 rounded-lg p-12 shadow-md hover:shadow-lg transition flex flex-col items-center text-center">
                         <img src="{{ asset('images/profile.png') }}" alt="Doctor Avatar"
-                            class="w-24 h-24 rounded-full mb-4 shadow-lg bg-gray-200">
+                            class="w-24 h-24 border-4 rounded-full mb-4 shadow-lg bg-gray-200">
                         <h3 class="text-lg font-bold text-gray-700">drh. Budi Santoso</h3>
                         <p class="text-gray-500 text-sm">Doctor</p>
                         <p class="text-gray-400 text-sm">budi.santoso@gmail.com</p>

@@ -43,7 +43,7 @@
 </style>
 
 
-<body class="font-poppins h-screen flex flex-col p-6">
+<body class="font-poppins h-screen flex flex-col p-6 bg-bgprimary">
     <!-- Navbar -->
     <x-navbar-admin />
 
@@ -87,14 +87,16 @@
         <div class="w-[20%] bg-white border-2 rounded-2xl shadow-lg p-6 max-h-full overflow-y-auto">
             <h3 class="text-primary font-bold mb-4">Jadwal Hari Ini</h3>
             <div id="scheduleList" class="space-y-4">
-                <div class="p-4 bg-indigo-50 rounded-lg shadow">
+                <div
+                    class="p-4 bg-indigo-50 rounded-lg shadow hover:-translate-x-2 transition-transform ease-in duration-300">
                     <h4 class="font-bold text-gray-700">10:00 - 10:30</h4>
                     <p class="text-sm text-gray-500">Catty - Persia (Gilang)</p>
                     <p class="text-sm text-gray-500">Dokter: drh Agus</p>
                     <span
                         class="inline-block px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-600 rounded">Konsultasi</span>
                 </div>
-                <div class="p-4 bg-indigo-50 rounded-lg shadow">
+                <div
+                    class="p-4 bg-indigo-50 rounded-lg shadow hover:-translate-x-2 transition-transform ease-in duration-300">
                     <h4 class="font-bold text-gray-700">11:00 - 11:30</h4>
                     <p class="text-sm text-gray-500">Milo - Bulldog (Agus)</p>
                     <p class="text-sm text-gray-500">Dokter: drh Lani</p>

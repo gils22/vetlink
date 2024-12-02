@@ -18,6 +18,7 @@ export default {
             colors: {
                 primary: '#624DE3',
                 textprimary: '#545454',
+                bgprimary: '#F7F6FE',
             },
             animation: {
                 fadeInLeft: 'fadeInLeft 3s ease-out',
