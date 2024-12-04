@@ -40,14 +40,14 @@
             </div>
 
             <!-- Tabel -->
-            <div class="bg-white rounded-2xl shadow-xl p-6 overflow-x-auto h-[710px]">
+            <div class="bg-white rounded-2xl shadow-hover-timbul p-6 overflow-x-auto max-h-[710px]">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-xl font-semibold">Pet List</h2>
                     <div class="flex justify-end items-center mb-4 gap-4">
                         <div class="relative w-48">
                             <select
                                 class="w-full border rounded-lg shadow-md px-3 py-2 pr-10 bg-white appearance-none focus:outline-none focus:ring-2 focus:ring-primary">
-                                <option>Species</option>
+                                <option value="" disabled selected hidden>Species</option>
                                 <option>Cat</option>
                                 <option>Dog</option>
                             </select>
@@ -61,7 +61,7 @@
                         <div class="relative w-48">
                             <select
                                 class="w-full border rounded-lg shadow-md px-3 py-2 pr-10 bg-white appearance-none focus:outline-none focus:ring-2 focus:ring-primary">
-                                <option>Gender</option>
+                                <option value="" disabled selected hidden>Gender</option>
                                 <option>Male</option>
                                 <option>Female</option>
                             </select>
@@ -88,7 +88,7 @@
                     </thead>
                     <tbody>
                         <!-- Data Row -->
-                        <tr>
+                        <tr class="cursor-pointer" onclick="window.location='/clients/patient/dataPatient'">
                             <td class="py-3 px-4 ">00001</td>
                             <td class="py-3 px-4 ">Catty</td>
                             <td class="py-3 px-4 ">Cat</td>

@@ -61,7 +61,7 @@
                     <a href="#" class="text-indigo-600 hover:text-indigo-500">Forget Password?</a>
                 </div>
 
-                <button type="submit"
+                <button onclick="window.location='/dashboard'" type="submit"
                     class="w-full py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-md">Log
                     in</button>
             </form>

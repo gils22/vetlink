@@ -1,5 +1,5 @@
 <nav id="navbar"
-    class="border-gray-200 bg-gray-50 rounded-3xl my-12 mx-28 shadow-xl transition-all duration-300 ease-in-out">
+    class="border-gray-200 bg-gray-50 rounded-3xl my-12 mx-28 shadow-hover-timbul transition-all duration-300 ease-in-out">
     <div class="max-w-screen-2xl flex flex-wrap items-center justify-between p-2 mx-auto">
         <a href="/" class="flex items-center space-x-3">
             <img src="{{ asset('images/logo-app.png') }}" class=" h-12" alt="VetLink Logo" />

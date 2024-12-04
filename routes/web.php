@@ -38,8 +38,24 @@ Route::get('/patient', function () {
     return view('patient');
 });
 
+Route::get('clients/patient/dataPatient', function () {
+    return view('contents/patient/dataPatient');
+});
+
+Route::get('clients/patient/dataPatient/rekamMedis', function () {
+    return view('contents/patient/rekamMedis');
+});
+
+Route::get('clients/patient/dataPatient/tambahRekamMedis', function () {
+    return view('contents/patient/tambahRekamMedis');
+});
+
 Route::get('clients/owners/tambahOwners', function () {
-    return view('contents/tambahOwners');
+    return view('contents/owners/tambahOwners');
+});
+
+Route::get('clients/owners/dataOwners', function () {
+    return view('contents/owners/dataOwners');
 });
 
 Route::get('/jadwal', function () {

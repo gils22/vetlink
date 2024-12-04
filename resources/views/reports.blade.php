@@ -32,7 +32,7 @@
                     <p class="text-gray-500 text-sm">Summary of the clinic's performance</p>
                 </div>
             </div>
-            <div class="bg-white rounded-2xl shadow-xl p-6 md:p-12 h-[710px] overflow-y-auto">
+            <div class="bg-white rounded-2xl shadow-hover-timbul p-6 md:p-12 h-[710px] overflow-y-auto">
                 <!-- Statistik Section -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                     <!-- Total Patients -->

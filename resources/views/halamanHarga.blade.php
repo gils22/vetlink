@@ -24,7 +24,7 @@
                 <h1 class="text-5xl text-primary font-semibold pb-6">Solusi Lengkap Manajemen Klinik</h1>
                 <h1 class="text-5xl text-primary font-semibold mb-8">Lebih Mudah dan Efisien</h1>
                 <button
-                    class="border-2 border-primary bg-primary rounded-lg px-6 py-3 hover:font-semibold text-white mr-4 shadow-xl mb-8">
+                    class="border-2 border-primary bg-primary rounded-lg px-6 py-3 hover:font-semibold text-white mr-4 shadow-hover-timbul mb-8">
                     COBA SEKARANG
                 </button>
             </div>
@@ -176,11 +176,11 @@
         </div>
         <div class="flex items-center justify-center space-x-4 mt-12 mb-20">
             <button
-                class="border-2 border-primary bg-primary rounded-lg px-6 py-3 hover:font-semibold text-white mr-4 shadow-xl">
+                class="border-2 border-primary bg-primary rounded-lg px-6 py-3 hover:font-semibold text-white mr-4 shadow-hover-timbul">
                 COBA GRATIS
             </button>
             <button
-                class="border-2 border-primary bg-white rounded-lg px-6 py-3 hover:font-semibold text-primary mr-4 shadow-xl">
+                class="border-2 border-primary bg-white rounded-lg px-6 py-3 hover:font-semibold text-primary mr-4 shadow-hover-timbul">
                 Whatsapp Sales
             </button>
         </div>
@@ -195,7 +195,7 @@
             <h1 class="text-5xl font-semibold text-primary mb-6">Effortless Vet Clinics
                 Operations</h1>
             <button
-                class="bg-primary text-white rounded-lg px-6 py-3 shadow-lg hover:shadow-xl hover:font-semibold mb-12">
+                class="bg-primary text-white rounded-lg px-6 py-3 shadow-lg hover:shadow-hover-timbul hover:font-semibold mb-12">
                 Book FREE Demo Now
             </button>
             <img src="{{ asset('images/imac-laptop.png') }}" alt="Vetlink Dashboard"class="h-[500px">

@@ -26,11 +26,11 @@
                 <p class="text-2xl mb-2">Solusi Dokter Hewan dan Klinik Hewan dalam</p>
                 <p class="text-2xl mb-8">Manajemen Operasional Klinik Hewan Secara Real-time.</p>
                 <button
-                    class="border-2 border-primary bg-primary rounded-lg px-6 py-3 hover:font-semibold text-white mr-4 shadow-xl">
+                    class="border-2 border-primary bg-primary rounded-lg px-6 py-3 hover:font-semibold text-white mr-4 shadow-hover-timbul">
                     Free Trial
                 </button>
                 <button
-                    class="border-2 border-primary bg-white rounded-lg px-6 py-3 hover:font-semibold text-primary mr-4 shadow-xl">
+                    class="border-2 border-primary bg-white rounded-lg px-6 py-3 hover:font-semibold text-primary mr-4 shadow-hover-timbul">
                     Video Demo
                 </button>
             </div>
@@ -132,10 +132,10 @@
             <!-- Tombol Aksi -->
             <div class="flex space-x-4 mt-12">
                 <button
-                    class="border-2 border-primary bg-primary rounded-lg px-6 py-3 hover:font-semibold text-white mr-4 shadow-xl">COBA
+                    class="border-2 border-primary bg-primary rounded-lg px-6 py-3 hover:font-semibold text-white mr-4 shadow-hover-timbul">COBA
                     GRATIS</button>
                 <button
-                    class="border-2 border-primary bg-white rounded-lg px-6 py-3 hover:font-semibold text-primary mr-4 shadow-xl">Whatsapp
+                    class="border-2 border-primary bg-white rounded-lg px-6 py-3 hover:font-semibold text-primary mr-4 shadow-hover-timbul">Whatsapp
                     Sales</button>
             </div>
         </div>
@@ -150,7 +150,7 @@
                 </h1>
                 <div class="flex justify-center mt-6">
                     <button
-                        class="border-2 border-primary bg-primary rounded-lg px-6 py-3 hover:font-semibold text-white shadow-xl">
+                        class="border-2 border-primary bg-primary rounded-lg px-6 py-3 hover:font-semibold text-white shadow-hover-timbul">
                         COBA GRATIS
                     </button>
                 </div>
@@ -202,7 +202,7 @@
             <h1 class="text-5xl font-semibold text-primary mb-6">Effortless Vet Clinics
                 Operations</h1>
             <button
-                class="bg-primary text-white rounded-lg px-6 py-3 shadow-lg hover:shadow-xl hover:font-semibold mb-12">
+                class="bg-primary text-white rounded-lg px-6 py-3 shadow-lg hover:shadow-hover-timbul hover:font-semibold mb-12">
                 Book FREE Demo Now
             </button>
             <img src="{{ asset('images/imac-laptop.png') }}" alt="Vetlink Dashboard"class="h-[500px">

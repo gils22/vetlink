@@ -32,20 +32,27 @@
                 <div class="space-y-6">
                     <!-- Hero Section -->
                     <div
-                        class="bg-primary text-white rounded-xl shadow-lg flex items-center justify-between bg-cover bg-center h-[250px] p-6 md:p-8 lg:p-10">
-                        <div>
-                            <h3 class="text-lg font-semibold mb-2 lg:mb-4">{{ $currentDate }}</h3>
-                            <h2 class="text-xl lg:text-2xl font-semibold">Welcome back, Admin</h2>
-                            <p class="text-sm lg:text-lg">Always stay updated in VetLink</p>
+                        class="bg-primary text-white rounded-xl shadow-hover-timbul flex flex-col lg:flex-row items-center justify-between bg-cover bg-center h-auto lg:h-[250px] p-6 md:p-8 lg:p-10">
+                        <!-- Text Section -->
+                        <div class="text-center lg:text-left mb-4 lg:mb-0">
+                            <h3 class="text-base sm:text-lg font-semibold mb-2 lg:mb-4">{{ $currentDate }}</h3>
+                            <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold">Welcome back, Admin</h2>
+                            <p class="text-xs sm:text-sm lg:text-lg">Always stay updated in VetLink</p>
                         </div>
-                        <img src="{{ asset('images/img-dashboard.png') }}" alt="Dashboard Illustration"
-                            class="h-auto w-auto md:w-[250px] lg:w-[350px] object-contain">
+
+                        <!-- Image Section -->
+                        <div class="w-36 h-36 md:w-48 md:h-48 lg:w-auto lg:h-auto">
+                            <img src="{{ asset('images/img-dashboard.png') }}" alt="Dashboard Illustration"
+                                class="mx-auto">
+                        </div>
                     </div>
+
 
                     <!-- Statistics Cards -->
                     <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         <!-- Card 1 -->
-                        <div class="border-2 rounded-2xl bg-white shadow-lg p-4 flex flex-col justify-between">
+                        <div
+                            class="border-2 rounded-2xl bg-white shadow-hover-timbul p-4 flex flex-col justify-between">
                             <div class="flex items-center gap-2">
                                 <img src="{{ asset('images/invoice.svg') }}" alt="Invoice">
                                 <h3 class="text-primary font-semibold">Total Invoice</h3>
@@ -57,7 +64,8 @@
                         </div>
 
                         <!-- Card 2 -->
-                        <div class="border-2 rounded-2xl bg-white shadow-lg p-4 flex flex-col justify-between">
+                        <div
+                            class="border-2 rounded-2xl bg-white shadow-hover-timbul p-4 flex flex-col justify-between">
                             <div class="flex items-center gap-2">
                                 <img src="{{ asset('images/total-pasien.svg') }}" alt="Patient">
                                 <h3 class="text-primary font-semibold">Total Patient</h3>
@@ -69,7 +77,8 @@
                         </div>
 
                         <!-- Card 3 -->
-                        <div class="border-2 rounded-2xl bg-white shadow-lg p-4 flex flex-col justify-between">
+                        <div
+                            class="border-2 rounded-2xl bg-white shadow-hover-timbul p-4 flex flex-col justify-between">
                             <div class="flex items-center gap-2">
                                 <img src="{{ asset('images/janjitemu.svg') }}" alt="Appointment">
                                 <h3 class="text-primary font-semibold">Appointment</h3>
@@ -83,7 +92,8 @@
 
                     <!-- Chart Section -->
                     <section class="grid grid-cols-1 gap-4">
-                        <div class="border-2 rounded-xl bg-white shadow-lg p-6 h-[395px] flex flex-col justify-between">
+                        <div
+                            class="border-2 rounded-2xl bg-white shadow-hover-timbul p-6 h-[390px] flex flex-col justify-between">
                             <h3 class="text-primary font-semibold mb-4 text-lg">Total Pasien Mingguan</h3>
                         </div>
                     </section>
@@ -91,8 +101,8 @@
                 </div>
 
                 <!-- Timeline Section -->
-                <div class="bg-white border-2 rounded-xl shadow-lg p-6 max-h-[810px] overflow-y-auto">
-                    <h3 class="text-primary font-bold mb-4">Jadwal Hari Ini</h3>
+                <div class="bg-white border-2 rounded-2xl shadow-hover-timbul p-6 max-h-[810px] overflow-y-auto">
+                    <h3 class="text-primary text-xl font-semibold mb-4">Jadwal Hari Ini</h3>
                     <div class="space-y-4">
                         <div
                             class="p-4 bg-indigo-50 rounded-lg shadow hover:-translate-x-2 transition-transform ease-in duration-300">
@@ -134,6 +144,7 @@
     </div>
 </body>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
 </html>

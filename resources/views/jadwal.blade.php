@@ -42,7 +42,7 @@
             </div>
 
             <!-- Table Section -->
-            <div class="bg-white rounded-2xl shadow-xl p-6 md:p-12 overflow-x-auto h-[710px]">
+            <div class="bg-white rounded-2xl shadow-hover-timbul p-6 md:p-12 overflow-x-auto">
                 <div class="flex justify-between items-center mb-4">
                     <!-- Tabs -->
                     <div class="flex gap-4 text-md font-semibold text-gray-600">
@@ -73,7 +73,7 @@
                         <div class="relative w-48">
                             <select
                                 class="w-full border rounded-lg shadow-md px-3 py-2 pr-10 bg-white appearance-none focus:outline-none focus:ring-2 focus:ring-primary">
-                                <option>Staff</option>
+                                <option value="" disabled selected hidden>Staff</option>
                                 <option>drh.Agus</option>
                                 <option>drh.Gilang</option>
                             </select>

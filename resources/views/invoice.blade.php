@@ -41,7 +41,7 @@
             </div>
 
             <!-- Tabel -->
-            <div class="bg-white rounded-2xl shadow-xl p-6 overflow-x-auto h-[720px]">
+            <div class="bg-white rounded-2xl shadow-hover-timbul p-6 overflow-x-auto">
                 <div class="flex justify-end items-center mb-4">
                     <div class="relative w-48">
                         <select

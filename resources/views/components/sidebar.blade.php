@@ -1,4 +1,4 @@
-<aside class="bg-primary rounded-3xl h-[94%] w-64 mx-8 my-8 shadow-2xl overflow-hidden text-lg">
+<aside class="bg-primary rounded-3xl h-[94%] w-64 mx-8 my-8 shadow-hover-timbul overflow-hidden text-lg">
     <div class="flex ml-5">
         <img src="{{ asset('images/logo-app-putih.png') }}" alt="" class="h-12 my-4">
     </div>

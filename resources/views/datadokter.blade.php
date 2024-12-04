@@ -40,7 +40,7 @@
             </div>
 
             <!-- Doctor Cards Section -->
-            <div class="bg-white rounded-2xl shadow-xl p-6 md:p-12 h-[710px]">
+            <div class="bg-white rounded-2xl shadow-hover-timbul p-6 md:p-12">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 h-[350px] mx-8">
                     <!-- Doctor Card 1 -->
                     <div

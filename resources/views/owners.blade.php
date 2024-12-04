@@ -40,7 +40,7 @@
             </div>
 
             <!-- Table Section -->
-            <div class="bg-white rounded-2xl shadow-xl p-6 overflow-x-auto h-[710px]">
+            <div class="bg-white rounded-2xl shadow-hover-timbul p-6 overflow-x-auto max-h-[710px]">
                 <table class="w-full text-left bg-white rounded-lg overflow-hidden">
                     <thead>
                         <tr class="bg-gray-100">
@@ -53,7 +53,7 @@
                     </thead>
                     <tbody>
                         <!-- Example Data Rows -->
-                        <tr class="">
+                        <tr class="cursor-pointer" onclick="window.location='/clients/owners/dataOwners'">
                             <td class="py-3 px-4 flex items-center gap-3">
                                 <img src="{{ asset('images/profile.png') }}" alt="Avatar"
                                     class="w-10 h-10 rounded-full">
@@ -83,8 +83,9 @@
                                 </button>
                             </td>
                         </tr>
+                        </a>
 
-                        <tr class=" bg-bgprimary">
+                        <tr class=" bg-bgprimary cursor-pointer" onclick="window.location='/clients/owners/dataOwners'">
                             <td class="py-3 px-4 flex items-center gap-3">
                                 <img src="{{ asset('images/profile.png') }}" alt="Avatar"
                                     class="w-10 h-10 rounded-full">

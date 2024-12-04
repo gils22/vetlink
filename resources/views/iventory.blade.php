@@ -41,12 +41,12 @@
             </div>
 
             <!-- Tabel -->
-            <div class="bg-white rounded-2xl shadow-xl p-6 overflow-x-auto h-[720px]">
+            <div class="bg-white rounded-2xl shadow-hover-timbul p-6 overflow-x-auto">
                 <div class="flex justify-end items-center mb-4">
                     <div class="relative w-48">
                         <select
                             class="w-full border rounded-lg shadow-md px-3 py-2 pr-10 bg-white appearance-none focus:outline-none focus:ring-2 focus:ring-primary">
-                            <option>Category</option>
+                            <option value="" disabled selected hidden>Category</option>
                             <option>Food</option>
                             <option>Obat</option>
                         </select>
