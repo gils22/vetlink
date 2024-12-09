@@ -16,101 +16,106 @@
 </head>
 
 <body class="font-poppins bg-bgprimary">
-    <div class="flex h-screen">
+    <div class="flex h-screen overflow-hidden"> <!-- Tambahkan gap-16 untuk jarak lebih lebar -->
         <!-- Sidebar -->
-        <aside class="">
+        <aside class="w-64 bg-bgprimary text-white fixed h-full">
             <x-sidebar />
         </aside>
 
         <!-- Main Content -->
-        <main class="flex-1 p-6 space-y-6">
+        <div class="flex-1 ml-64 flex flex-col">
             <!-- Navbar -->
-            <x-navbar-admin />
+            <header class="bg-bgprimary">
+                <x-navbar-admin />
+            </header>
 
-            <!-- Header Section -->
-            <div class="flex items-center justify-between mb-6">
-                <div>
-                    <h1 class="text-3xl font-semibold mb-2">Invoice</h1>
+            <main class="flex-1 overflow-y-auto px-6 space-y-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-3xl font-semibold mb-2">Invoice</h1>
+                        <p class="text-sm font-semibold">
+                            <span class="text-primary cursor-pointer">Invoice</span>
+                        </p>
+                    </div>
+                    <a href="">
+                        <button
+                            class="border-2 border-primary bg-primary text-white rounded-lg px-4 py-2 shadow-lg hover:-translate-y-1 transform transition duration-300">
+                            Add Invoice
+                        </button>
+                    </a>
                 </div>
-                <a href="">
-                    <button
-                        class="border-2 border-primary bg-primary text-white rounded-lg px-6 py-3 shadow-lg hover:-translate-y-1 transform transition duration-300">
-                        Add Invoice
-                    </button>
-                </a>
-            </div>
 
-            <!-- Tabel -->
-            <div class="bg-white rounded-2xl shadow-hover-timbul p-6 overflow-x-auto">
-                <div class="flex justify-end items-center mb-4">
-                    <div class="relative w-48">
-                        <select
-                            class="w-full border rounded-lg shadow-md px-3 py-2 pr-10 bg-white appearance-none focus:outline-none focus:ring-2 focus:ring-primary">
-                            <option>Today</option>
-                            <option>Tommorrow</option>
-                            <option>Next Week</option>
-                        </select>
-                        <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none">
-                            <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2"
-                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-                            </svg>
+                <!-- Tabel -->
+                <div class="bg-white rounded-2xl shadow-hover-timbul p-6 overflow-x-auto">
+                    <div class="flex justify-end items-center mb-4">
+                        <div class="relative w-48">
+                            <select
+                                class="w-full border rounded-lg shadow-md px-3 py-2 pr-10 bg-white appearance-none focus:outline-none focus:ring-2 focus:ring-primary">
+                                <option>Today</option>
+                                <option>Tommorrow</option>
+                                <option>Next Week</option>
+                            </select>
+                            <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                                <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="w-full text-left bg-white rounded-lg overflow-hidden">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="py-3 px-4 text-center">Invoice</th>
+                                <th class="py-3 px-4 ">Date</th>
+                                <th class="py-3 px-4 ">Item</th>
+                                <th class="py-3 px-4 text-center">Quantity</th>
+                                <th class="py-3 px-4 text-center">Total</th>
+                                <th class="py-3 px-4 text-center">Payment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data Row -->
+                            <tr>
+                                <td class="py-3 px-4 text-center ">INV-001</td>
+                                <td class="py-3 px-4 ">20 May 2024</td>
+                                <td class="py-3 px-4 ">Wiskas</td>
+                                <td class="py-3 px-4 text-center">1</td>
+                                <td class="py-3 px-4 text-center">Rp 20.000</td>
+                                <td class="py-3 px-4 flex gap-2 justify-center">
+                                    <span
+                                        class="text-sm font-semibold text-green-500 bg-green-200 px-3 py-1 rounded-full">Completed</span>
+                                </td>
+                            </tr>
+                            <tr class="bg-bgprimary">
+                                <td class="py-3 px-4 text-center">INV-002</td>
+                                <td class="py-3 px-4 ">20 May 2024</td>
+                                <td class="py-3 px-4 ">Wiskas</td>
+                                <td class="py-3 px-4 text-center">1</td>
+                                <td class="py-3 px-4 text-center">Rp 20.000</td>
+                                <td class="py-3 px-4 flex gap-2 justify-center">
+                                    <span
+                                        class="text-sm font-semibold text-yellow-500 bg-yellow-200 px-3 py-1 rounded-full">Pending</span>
+                                </td>
+                            </tr>
+                            <!-- Tambahkan baris data lainnya di sini -->
+                        </tbody>
+                    </table>
+
+                    <!-- Pagination -->
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-sm text-gray-500">Showing 1-10 of 78</span>
+                        <div class="flex gap-1">
+                            <button
+                                class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded hover:bg-gray-200">Prev</button>
+                            <button
+                                class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded hover:bg-gray-200">Next</button>
                         </div>
                     </div>
                 </div>
-                <table class="w-full text-left bg-white rounded-lg overflow-hidden">
-                    <thead class="bg-gray-100">
-                        <tr>
-                            <th class="py-3 px-4 text-center">Invoice</th>
-                            <th class="py-3 px-4 ">Date</th>
-                            <th class="py-3 px-4 ">Item</th>
-                            <th class="py-3 px-4 text-center">Quantity</th>
-                            <th class="py-3 px-4 text-center">Total</th>
-                            <th class="py-3 px-4 text-center">Payment</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Data Row -->
-                        <tr>
-                            <td class="py-3 px-4 text-center ">INV-001</td>
-                            <td class="py-3 px-4 ">20 May 2024</td>
-                            <td class="py-3 px-4 ">Wiskas</td>
-                            <td class="py-3 px-4 text-center">1</td>
-                            <td class="py-3 px-4 text-center">Rp 20.000</td>
-                            <td class="py-3 px-4 flex gap-2 justify-center">
-                                <span
-                                    class="text-sm font-semibold text-green-500 bg-green-200 px-3 py-1 rounded-full">Completed</span>
-                            </td>
-                        </tr>
-                        <tr class="bg-bgprimary">
-                            <td class="py-3 px-4 text-center">INV-002</td>
-                            <td class="py-3 px-4 ">20 May 2024</td>
-                            <td class="py-3 px-4 ">Wiskas</td>
-                            <td class="py-3 px-4 text-center">1</td>
-                            <td class="py-3 px-4 text-center">Rp 20.000</td>
-                            <td class="py-3 px-4 flex gap-2 justify-center">
-                                <span
-                                    class="text-sm font-semibold text-yellow-500 bg-yellow-200 px-3 py-1 rounded-full">Pending</span>
-                            </td>
-                        </tr>
-                        <!-- Tambahkan baris data lainnya di sini -->
-                    </tbody>
-                </table>
 
-                <!-- Pagination -->
-                <div class="flex justify-between items-center mt-4">
-                    <span class="text-sm text-gray-500">Showing 1-10 of 78</span>
-                    <div class="flex gap-1">
-                        <button
-                            class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded hover:bg-gray-200">Prev</button>
-                        <button
-                            class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded hover:bg-gray-200">Next</button>
-                    </div>
-                </div>
-            </div>
-
-        </main>
-    </div>
+            </main>
+        </div>
 </body>
 
 

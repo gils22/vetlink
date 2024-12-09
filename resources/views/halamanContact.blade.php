@@ -11,32 +11,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     @vite('resources/css/app.css')
-    <style>
-        body {
-            overflow: hidden;
-        }
-    </style>
     <title>VetLink</title>
 </head>
 
-<body class="font-poppins">
+<body class="font-poppins overflow-y-auto">
     <!-- Navbar -->
     <x-navbar />
 
     <!-- Header Section -->
-    <div class="flex flex-col items-center justify-center">
+    <div class="flex flex-col items-center justify-center px-4 lg:px-0">
         <!-- Main Container -->
         <div
-            class="mx-auto mt-[30px] container-cta rounded-[40px] border border-solid border-primary py-[50px] px-[47px] text-center">
+            class="mx-auto mt-8 lg:mt-12 max-w-3xl bg-white rounded-2xl border border-solid border-primary py-8 px-6 text-center shadow-md">
             <!-- Title -->
-            <h2 class="text-xl font-semibold text-primary">
+            <h2 class="text-lg lg:text-xl font-semibold text-primary">
                 Ingin langsung Terhubung
             </h2>
-            <h2 class="text-xl font-semibold text-primary">dengan Tim Kami? Hubungi!</h2>
+            <h2 class="text-lg lg:text-xl font-semibold text-primary">dengan Tim Kami? Hubungi!</h2>
 
             <!-- WhatsApp Number -->
-            <p class="text-2xl font-bold text-primary my-4">0812-1619-0556</p>
-            <p class="text-2xl font-bold text-primary my-4">
+            <p class="text-xl lg:text-2xl font-bold text-primary my-4">0812-1619-0556</p>
+            <p class="text-xl lg:text-2xl font-bold text-primary my-4">
                 <span class="text-primary">(WhatsApp)</span>
             </p>
 
@@ -48,9 +43,9 @@
         </div>
 
         <!-- Info Section -->
-        <section class="flex flex-col items-center mt-2 h-96 justify-center">
-            <img src="{{ asset('images/logo-app.png') }}" alt="VetLink Logo" class="h-36 my-6">
-            <p class="text-center text-gray-600 max-w-2xl">
+        <section class="flex flex-col items-center mt-8 h-auto lg:h-96 justify-center text-center px-4 lg:px-0">
+            <img src="{{ asset('images/logo-app.png') }}" alt="VetLink Logo" class="h-24 lg:h-36 my-6">
+            <p class="text-gray-600 max-w-2xl">
                 Kami membantu dokter hewan dan pemilik klinik hewan untuk mengelola operasional klinik mulai
                 dari kedatangan klien, pemesanan, pembayaran, rawat jalan pasien, database alat dan obat-obatan,
                 serta laporan keuangan yang dapat diupdate secara real time.
@@ -59,7 +54,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-primary py-4">
+    <footer class="bg-primary py-4 mt-8">
         <div class="container mx-auto text-center">
             <p class="text-white font-semibold">2024 VetLink</p>
         </div>

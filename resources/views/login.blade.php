@@ -17,7 +17,7 @@
 <body class="bg-white-100 flex flex-col items-center justify-center sm:flex-row min-h-screen font-poppins">
     <div class="absolute top-10 left-20">
         <!-- Logo in the top left corner -->
-        <img src="{{ asset('images/logo-app.png') }}" alt="VetLink Logo" class=" w-32">
+
     </div>
 
     <div class=" w-2/3">
@@ -27,6 +27,7 @@
     <div>
         <!-- Right side form -->
         <div class="p-8 w-full">
+            <img src="{{ asset('images/logo-app.png') }}" alt="VetLink Logo" class="w-32 mb-6">
             <!-- Title -->
             <h1 class="text-3xl font-semibold text-indigo-700 ">Companion for Veterinary
             </h1>

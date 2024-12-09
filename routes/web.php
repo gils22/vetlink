@@ -19,11 +19,23 @@ Route::get('/login', function () {
     return view('login');
 });
 
+Route::get('/register', function () {
+    return view('register');
+});
+
 // Route untuk dashboard
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
 Route::get('/kalender', function () {
     return view('kalender');
+});
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/subscription', function () {
+    return view('subscription');
 });
 
 Route::get('/datadokter', function () {
@@ -34,12 +46,16 @@ Route::get('clients/owners', function () {
     return view('owners');
 });
 
-Route::get('/patient', function () {
+Route::get('clients/patient', function () {
     return view('patient');
 });
 
 Route::get('clients/patient/dataPatient', function () {
     return view('contents/patient/dataPatient');
+});
+
+Route::get('clients/patient/tambahPatient', function () {
+    return view('contents/patient/tambahPatient');
 });
 
 Route::get('clients/patient/dataPatient/rekamMedis', function () {

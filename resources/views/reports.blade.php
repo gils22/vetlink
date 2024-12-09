@@ -16,98 +16,103 @@
 </head>
 
 <body class="font-poppins bg-bgprimary">
-    <div class="flex h-screen"> <!-- Tambahkan gap-16 untuk jarak lebih lebar -->
+    <div class="flex h-screen overflow-hidden">
         <!-- Sidebar -->
-        <aside class="">
+        <aside class="w-64 bg-bgprimary text-white fixed h-full">
             <x-sidebar />
         </aside>
 
         <!-- Main Content -->
-        <main class="flex-1 p-6 space-y-6">
+        <div class="flex-1 ml-64 flex flex-col">
             <!-- Navbar -->
-            <x-navbar-admin />
-            <div class="flex items-center justify-between">
-                <div>
-                    <h1 class="text-3xl font-semibold mb-2">Clinic Report</h1>
-                    <p class="text-gray-500 text-sm">Summary of the clinic's performance</p>
+            <header class="bg-bgprimary">
+                <x-navbar-admin />
+            </header>
+
+            <!-- Content -->
+            <main class="flex-1 overflow-y-auto px-6 space-y-6 pb-6">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h1 class="text-3xl font-semibold mb-2">Clinic Report</h1>
+                        <p class="text-sm font-semibold text-primary">Summary of the clinic's performance.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="bg-white rounded-2xl shadow-hover-timbul p-6 md:p-12 h-[710px] overflow-y-auto">
-                <!-- Statistik Section -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                    <!-- Total Patients -->
-                    <div class="bg-blue-100 rounded-lg shadow-md p-4 text-center">
-                        <h2 class="text-lg font-semibold text-gray-700">Total Patients</h2>
-                        <p class="text-3xl font-bold text-blue-600">120</p>
+                <div class="bg-white rounded-2xl shadow-hover-timbul p-6 md:p-12 h-auto">
+                    <!-- Statistik Section -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                        <!-- Total Patients -->
+                        <div class="bg-blue-100 rounded-lg shadow-md p-4 text-center">
+                            <h2 class="text-lg font-semibold text-gray-700">Total Patients</h2>
+                            <p class="text-3xl font-bold text-blue-600">120</p>
+                        </div>
+                        <!-- Total Revenue -->
+                        <div class="bg-green-100 rounded-lg shadow-md p-4 text-center">
+                            <h2 class="text-lg font-semibold text-gray-700">Total Revenue</h2>
+                            <p class="text-3xl font-bold text-green-600">Rp 15,000,000</p>
+                        </div>
+                        <!-- Services Provided -->
+                        <div class="bg-yellow-100 rounded-lg shadow-md p-4 text-center">
+                            <h2 class="text-lg font-semibold text-gray-700">Services Provided</h2>
+                            <p class="text-3xl font-bold text-yellow-600">56</p>
+                        </div>
                     </div>
-                    <!-- Total Revenue -->
-                    <div class="bg-green-100 rounded-lg shadow-md p-4 text-center">
-                        <h2 class="text-lg font-semibold text-gray-700">Total Revenue</h2>
-                        <p class="text-3xl font-bold text-green-600">Rp 15,000,000</p>
+
+                    <!-- Grafik Section -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                        <!-- Patient Visits Chart -->
+                        <div class="bg-gray-50 rounded-lg shadow-lg p-6">
+                            <h2 class="text-lg font-semibold mb-4">Patient Visits</h2>
+                            <canvas id="visitsChart"></canvas>
+                        </div>
+
+                        <!-- Revenue Chart -->
+                        <div class="bg-gray-50 rounded-lg shadow-lg p-6">
+                            <h2 class="text-lg font-semibold mb-4">Monthly Revenue</h2>
+                            <canvas id="revenueChart"></canvas>
+                        </div>
                     </div>
-                    <!-- Services Provided -->
-                    <div class="bg-yellow-100 rounded-lg shadow-md p-4 text-center">
-                        <h2 class="text-lg font-semibold text-gray-700">Services Provided</h2>
-                        <p class="text-3xl font-bold text-yellow-600">56</p>
+
+                    <!-- Tabel Section -->
+                    <div>
+                        <h2 class="text-lg font-semibold mb-4">Recent Appointments</h2>
+                        <table class="w-full border-collapse bg-white shadow-md rounded-lg overflow-hidden">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="py-2 px-4 border">Date</th>
+                                    <th class="py-2 px-4 border">Client</th>
+                                    <th class="py-2 px-4 border">Pet</th>
+                                    <th class="py-2 px-4 border">Service</th>
+                                    <th class="py-2 px-4 border">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="py-2 px-4 border">20 May 2024</td>
+                                    <td class="py-2 px-4 border">John Doe</td>
+                                    <td class="py-2 px-4 border">Bella (Dog)</td>
+                                    <td class="py-2 px-4 border">Vet Consultation</td>
+                                    <td class="py-2 px-4 border">Rp 200,000</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="py-2 px-4 border">21 May 2024</td>
+                                    <td class="py-2 px-4 border">Jane Smith</td>
+                                    <td class="py-2 px-4 border">Milo (Cat)</td>
+                                    <td class="py-2 px-4 border">Vaccination</td>
+                                    <td class="py-2 px-4 border">Rp 150,000</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="py-2 px-4 border">22 May 2024</td>
+                                    <td class="py-2 px-4 border">Alice Johnson</td>
+                                    <td class="py-2 px-4 border">Luna (Rabbit)</td>
+                                    <td class="py-2 px-4 border">Grooming</td>
+                                    <td class="py-2 px-4 border">Rp 300,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
-                <!-- Grafik Section -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-                    <!-- Patient Visits Chart -->
-                    <div class="bg-gray-50 rounded-lg shadow-lg p-6">
-                        <h2 class="text-lg font-semibold mb-4">Patient Visits</h2>
-                        <canvas id="visitsChart"></canvas>
-                    </div>
-
-                    <!-- Revenue Chart -->
-                    <div class="bg-gray-50 rounded-lg shadow-lg p-6">
-                        <h2 class="text-lg font-semibold mb-4">Monthly Revenue</h2>
-                        <canvas id="revenueChart"></canvas>
-                    </div>
-                </div>
-
-                <!-- Tabel Section -->
-                <div>
-                    <h2 class="text-lg font-semibold mb-4">Recent Appointments</h2>
-                    <table class="w-full border-collapse bg-white shadow-md rounded-lg overflow-hidden">
-                        <thead class="bg-gray-100">
-                            <tr>
-                                <th class="py-2 px-4 border">Date</th>
-                                <th class="py-2 px-4 border">Client</th>
-                                <th class="py-2 px-4 border">Pet</th>
-                                <th class="py-2 px-4 border">Service</th>
-                                <th class="py-2 px-4 border">Amount</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="hover:bg-gray-50">
-                                <td class="py-2 px-4 border">20 May 2024</td>
-                                <td class="py-2 px-4 border">John Doe</td>
-                                <td class="py-2 px-4 border">Bella (Dog)</td>
-                                <td class="py-2 px-4 border">Vet Consultation</td>
-                                <td class="py-2 px-4 border">Rp 200,000</td>
-                            </tr>
-                            <tr class="hover:bg-gray-50">
-                                <td class="py-2 px-4 border">21 May 2024</td>
-                                <td class="py-2 px-4 border">Jane Smith</td>
-                                <td class="py-2 px-4 border">Milo (Cat)</td>
-                                <td class="py-2 px-4 border">Vaccination</td>
-                                <td class="py-2 px-4 border">Rp 150,000</td>
-                            </tr>
-                            <tr class="hover:bg-gray-50">
-                                <td class="py-2 px-4 border">22 May 2024</td>
-                                <td class="py-2 px-4 border">Alice Johnson</td>
-                                <td class="py-2 px-4 border">Luna (Rabbit)</td>
-                                <td class="py-2 px-4 border">Grooming</td>
-                                <td class="py-2 px-4 border">Rp 300,000</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-        </main>
+            </main>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

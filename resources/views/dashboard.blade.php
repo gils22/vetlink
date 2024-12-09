@@ -16,135 +16,128 @@
 </head>
 
 <body class="font-poppins min-h-screen bg-bgprimary">
-    <div class="flex h-screen"> <!-- Tambahkan gap-16 untuk jarak lebih lebar -->
+    <div class="flex h-screen overflow-hidden">
         <!-- Sidebar -->
-        <aside class="">
+        <aside class="w-64 bg-bgprimary text-white fixed h-full hidden lg:block">
             <x-sidebar />
         </aside>
 
         <!-- Main Content -->
-        <main class="flex-1 p-6 space-y-6"> <!-- Hilangkan padding tambahan agar lebih rapat -->
+        <div class="flex-1 lg:ml-64 flex flex-col">
             <!-- Navbar -->
-            <x-navbar-admin />
+            <header class="bg-bgprimary">
+                <x-navbar-admin />
+            </header>
 
-            <section class="grid grid-cols-1 lg:grid-cols-[3fr,1fr] gap-6">
-                <!-- Main Section: Hero + Cards + Charts -->
-                <div class="space-y-6">
-                    <!-- Hero Section -->
-                    <div
-                        class="bg-primary text-white rounded-xl shadow-hover-timbul flex flex-col lg:flex-row items-center justify-between bg-cover bg-center h-auto lg:h-[250px] p-6 md:p-8 lg:p-10">
-                        <!-- Text Section -->
-                        <div class="text-center lg:text-left mb-4 lg:mb-0">
-                            <h3 class="text-base sm:text-lg font-semibold mb-2 lg:mb-4">{{ $currentDate }}</h3>
-                            <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold">Welcome back, Admin</h2>
-                            <p class="text-xs sm:text-sm lg:text-lg">Always stay updated in VetLink</p>
-                        </div>
-
-                        <!-- Image Section -->
-                        <div class="w-36 h-36 md:w-48 md:h-48 lg:w-auto lg:h-auto">
+            <!-- Content -->
+            <main class="flex-1 overflow-hidden p-4 pb-6">
+                <section class="grid grid-cols-1 lg:grid-cols-[3fr,1fr] gap-4 h-full">
+                    <!-- Main Section: Hero + Cards -->
+                    <div class="flex flex-col space-y-4 h-full overflow-hidden">
+                        <!-- Hero Section -->
+                        <div
+                            class="bg-gradient-to-r from-primary to-indigo-500 text-white rounded-xl shadow-lg p-4 flex flex-col lg:flex-row items-center justify-between">
+                            <!-- Text Section -->
+                            <div class="text-center lg:text-left ml-4">
+                                <h3 class="text-xl font-semibold mb-12">{{ $currentDate }}</h3>
+                                <h2 class="text-xl font-semibold">Welcome back, Admin</h2>
+                                <p class="text-md">Always stay updated in VetLink</p>
+                            </div>
+                            <!-- Image Section -->
                             <img src="{{ asset('images/img-dashboard.png') }}" alt="Dashboard Illustration"
-                                class="mx-auto">
+                                class="h-32 lg:h-48 w-auto ">
+                        </div>
+
+                        <!-- Statistics Cards -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <!-- Total Invoice -->
+                            <div
+                                class="bg-white border rounded-xl shadow-lg p-6 flex flex-col space-y-4 hover:shadow-xl transform hover:-translate-y-1 transition">
+                                <h3 class="text-gray-600 font-semibold">Total Invoice</h3>
+                                <h2 class="text-3xl font-bold text-gray-800">1,287</h2>
+                                <p class="text-sm text-green-500 font-medium">▲ 12.1%</p>
+                                <p class="text-sm text-gray-500">You issued <span class="font-bold">56</span> more
+                                    invoices compared to yesterday.</p>
+                            </div>
+
+                            <!-- Total Patient -->
+                            <div
+                                class="bg-white border rounded-xl shadow-lg p-6 flex flex-col space-y-4 hover:shadow-xl transform hover:-translate-y-1 transition">
+                                <h3 class="text-gray-600 font-semibold">Total Patient</h3>
+                                <h2 class="text-3xl font-bold text-gray-800">587</h2>
+                                <p class="text-sm text-green-500 font-medium">▲ 6.3%</p>
+                                <p class="text-sm text-gray-500">You registered <span class="font-bold">20</span> more
+                                    patients compared to yesterday.</p>
+                            </div>
+
+                            <!-- Appointment -->
+                            <div
+                                class="bg-white border rounded-xl shadow-lg p-6 flex flex-col space-y-4 hover:shadow-xl transform hover:-translate-y-1 transition">
+                                <h3 class="text-gray-600 font-semibold">Appointment</h3>
+                                <h2 class="text-3xl font-bold text-gray-800">20</h2>
+                                <p class="text-sm text-red-500 font-medium">▼ 2.4%</p>
+                                <p class="text-sm text-gray-500">You had <span class="font-bold">12</span> fewer
+                                    appointments compared to yesterday.</p>
+                            </div>
                         </div>
                     </div>
 
-
-                    <!-- Statistics Cards -->
-                    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <!-- Card 1 -->
-                        <div
-                            class="border-2 rounded-2xl bg-white shadow-hover-timbul p-4 flex flex-col justify-between">
-                            <div class="flex items-center gap-2">
-                                <img src="{{ asset('images/invoice.svg') }}" alt="Invoice">
-                                <h3 class="text-primary font-semibold">Total Invoice</h3>
+                    <!-- Timeline Section -->
+                    <div class="bg-white rounded-2xl shadow-lg p-6 overflow-y-auto h-full">
+                        <h3 class="text-lg font-semibold text-primary mb-4">Jadwal Hari Ini</h3>
+                        <div class="space-y-4">
+                            <div
+                                class="p-4 bg-indigo-50 rounded-lg shadow hover:-translate-x-2 transition-transform ease-in duration-300">
+                                <h4 class="font-bold text-gray-700">10:00 - 10:30</h4>
+                                <p class="text-sm text-gray-500">Catty - Persia (Gilang)</p>
+                                <p class="text-sm text-gray-500">Dokter: drh Agus</p>
+                                <span
+                                    class="inline-block bg-indigo-100 text-indigo-600 text-xs font-medium rounded px-2 py-1">Konsultasi</span>
                             </div>
-                            <div>
-                                <h2 class="text-xl font-bold text-textprimary">1,287</h2>
-                                <p class="text-sm text-gray-500">56 more than yesterday</p>
+                            <div
+                                class="p-4 bg-indigo-50 rounded-lg shadow hover:-translate-x-2 transition-transform ease-in duration-300">
+                                <h4 class="font-bold text-gray-700">11:00 - 11:30</h4>
+                                <p class="text-sm text-gray-500">Milo - Bulldog (Agus)</p>
+                                <p class="text-sm text-gray-500">Dokter: drh Lani</p>
+                                <span
+                                    class="inline-block bg-indigo-100 text-indigo-600 text-xs font-medium rounded px-2 py-1">Konsultasi</span>
                             </div>
-                        </div>
-
-                        <!-- Card 2 -->
-                        <div
-                            class="border-2 rounded-2xl bg-white shadow-hover-timbul p-4 flex flex-col justify-between">
-                            <div class="flex items-center gap-2">
-                                <img src="{{ asset('images/total-pasien.svg') }}" alt="Patient">
-                                <h3 class="text-primary font-semibold">Total Patient</h3>
-                            </div>
-                            <div>
-                                <h2 class="text-xl font-bold text-textprimary">587</h2>
-                                <p class="text-sm text-gray-500">20 more than yesterday</p>
-                            </div>
-                        </div>
-
-                        <!-- Card 3 -->
-                        <div
-                            class="border-2 rounded-2xl bg-white shadow-hover-timbul p-4 flex flex-col justify-between">
-                            <div class="flex items-center gap-2">
-                                <img src="{{ asset('images/janjitemu.svg') }}" alt="Appointment">
-                                <h3 class="text-primary font-semibold">Appointment</h3>
-                            </div>
-                            <div>
-                                <h2 class="text-xl font-bold text-textprimary">20</h2>
-                                <p class="text-sm text-gray-500">12 less than yesterday</p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Chart Section -->
-                    <section class="grid grid-cols-1 gap-4">
-                        <div
-                            class="border-2 rounded-2xl bg-white shadow-hover-timbul p-6 h-[390px] flex flex-col justify-between">
-                            <h3 class="text-primary font-semibold mb-4 text-lg">Total Pasien Mingguan</h3>
-                        </div>
-                    </section>
-
-                </div>
-
-                <!-- Timeline Section -->
-                <div class="bg-white border-2 rounded-2xl shadow-hover-timbul p-6 max-h-[810px] overflow-y-auto">
-                    <h3 class="text-primary text-xl font-semibold mb-4">Jadwal Hari Ini</h3>
-                    <div class="space-y-4">
-                        <div
-                            class="p-4 bg-indigo-50 rounded-lg shadow hover:-translate-x-2 transition-transform ease-in duration-300">
-                            <h4 class="font-bold text-gray-700">10:00 - 10:30</h4>
-                            <p class="text-sm text-gray-500">Catty - Persia (Gilang)</p>
-                            <p class="text-sm text-gray-500">Dokter: drh Agus</p>
-                            <span
-                                class="inline-block px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-600 rounded">Konsultasi</span>
-                        </div>
-                        <div
-                            class="p-4 bg-indigo-50 rounded-lg shadow hover:-translate-x-2 transition-transform ease-in duration-300">
-                            <h4 class="font-bold text-gray-700">11:00 - 11:30</h4>
-                            <p class="text-sm text-gray-500">Milo - Bulldog (Agus)</p>
-                            <p class="text-sm text-gray-500">Dokter: drh Lani</p>
-                            <span
-                                class="inline-block px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-600 rounded">Konsultasi</span>
-                        </div>
-                        <div
-                            class="p-4 bg-indigo-50 rounded-lg shadow hover:-translate-x-2 transition-transform ease-in duration-300">
-                            <h4 class="font-bold text-gray-700">13:00 - 13:30</h4>
-                            <p class="text-sm text-gray-500">Bobby - Golden Retriever (Tina)</p>
-                            <p class="text-sm text-gray-500">Dokter: drh Sarah</p>
-                            <span
-                                class="inline-block px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-600 rounded">Checkup</span>
-                        </div>
-                        <div
-                            class="p-4 bg-indigo-50 rounded-lg shadow hover:-translate-x-2 transition-transform ease-in duration-300">
-                            <h4 class="font-bold text-gray-700">15:00 - 15:30</h4>
-                            <p class="text-sm text-gray-500">Lucky - Shih Tzu (Rama)</p>
-                            <p class="text-sm text-gray-500">Dokter: drh Indra</p>
-                            <span
-                                class="inline-block px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-600 rounded">Vaksinasi</span>
                         </div>
                     </div>
-                </div>
-            </section>
-        </main>
-
+                </section>
+            </main>
+        </div>
     </div>
 </body>
 
+
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('weeklyPatientsChart').getContext('2d');
+    const weeklyPatientsChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [{
+                label: 'Patients',
+                data: [12, 19, 3, 5, 2, 3, 7],
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
 
 
 </html>

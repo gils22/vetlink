@@ -1,11 +1,11 @@
-<aside class="bg-primary rounded-3xl h-[94%] w-64 mx-8 my-8 shadow-hover-timbul overflow-hidden text-lg">
+<aside class="bg-primary rounded-3xl h-[94%] w-56 mx-8 my-6 shadow-hover-timbul overflow-hidden text-lg">
     <div class="flex ml-5">
         <img src="{{ asset('images/logo-app-putih.png') }}" alt="" class="h-12 my-4">
     </div>
     <div class="flex flex-col justify-between h-[85%]">
         <div class="flex flex-col gap-2">
             <a href="/dashboard"
-                class="flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold"">
+                class="{{ request()->is('dashboard') ? 'font-semibold' : 'text-white opacity-90' }} flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:opacity-100 hover:text-white hover:font-semibold">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -24,7 +24,7 @@
                 </svg>
                 <h3 class="ml-3">Dashboard</h3>
             </a>
-            <div class="flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold"
+            <div class="{{ request()->is('clients*') ? 'font-semibold' : 'text-white opacity-90' }} flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:opacity-100 hover:text-white hover:font-semibold"
                 onclick="toggleDropdown('submenu', 'arrow')">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -51,7 +51,7 @@
                     </g>
                 </svg>
                 <h3 class="ml-3 text-white">Clients</h3>
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 ml-20"
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 ml-14"
                     id="arrow">
                     <path
                         d="M17.9188 8.17969H11.6888H6.07877C5.11877 8.17969 4.63877 9.33969 5.31877 10.0197L10.4988 15.1997C11.3288 16.0297 12.6788 16.0297 13.5088 15.1997L15.4788 13.2297L18.6888 10.0197C19.3588 9.33969 18.8788 8.17969 17.9188 8.17969Z"
@@ -61,21 +61,21 @@
             <div class="text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 hidden" id="submenu">
                 <a href="/clients/owners">
                     <h1
-                        class="cursor-pointer p-2 ml-8 h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold">
+                        class="{{ request()->is('clients/owners*') ? 'font-semibold' : 'text-white opacity-90' }} cursor-pointer p-2 ml-8 h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:opacity-100 hover:text-white hover:font-semibold">
                         &#8226 Owners
                     </h1>
                 </a>
 
-                <a href="/patient">
+                <a href="/clients/patient">
                     <h1
-                        class="cursor-pointer p-2 ml-8 h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold">
+                        class="{{ request()->is('clients/patient*') ? 'font-semibold' : 'text-white opacity-90' }} cursor-pointer p-2 ml-8 h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:opacity-100 hover:text-white hover:font-semibold">
                         &#8226 Patient
                     </h1>
                 </a>
             </div>
 
             <a href="/datadokter"
-                class="flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold">
+                class="{{ request()->is('datadokter') ? 'font-semibold' : 'text-white opacity-90' }} flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:opacity-100 hover:text-white hover:font-semibold">
                 <svg fill="#ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -88,7 +88,7 @@
                 <h3 class="ml-3 text-white">Doctor</h3>
             </a>
             <a href="/jadwal"
-                class="flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold">
+                class="{{ request()->is('jadwal') ? 'font-semibold' : 'text-white opacity-90' }} flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:opacity-100 hover:text-white hover:font-semibold">
                 <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6"
                     xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"
                     fill="#FFFFFF">
@@ -125,7 +125,7 @@
                 <h3 class="ml-3 text-white">Schedule</h3>
             </a>
             <a href="/iventory"
-                class="flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold">
+                class="{{ request()->is('iventory') ? 'font-semibold' : 'text-white opacity-90' }} flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:opacity-100 hover:text-white hover:font-semibold">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -144,7 +144,7 @@
                 <h3 class="ml-3 text-white">Inventory</h3>
             </a>
             <a href="/invoice"
-                class="flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold">
+                class="{{ request()->is('invoice') ? 'font-semibold' : 'text-white opacity-90' }} flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:opacity-100 hover:text-white hover:font-semibold">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -171,7 +171,7 @@
                 <h3 class="ml-3 text-white">Invoice</h3>
             </a>
             <a href="/reports"
-                class="flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold">
+                class="{{ request()->is('reports') ? 'font-semibold' : 'text-white opacity-90' }} flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:opacity-100 hover:text-white hover:font-semibold">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -189,7 +189,7 @@
         </div>
         <div>
             <a href="/"
-                class="flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-white hover:font-semibold">
+                class="flex p-2 ml-4 mx-auto cursor-pointer flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:opacity-100 hover:text-white hover:font-semibold">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>

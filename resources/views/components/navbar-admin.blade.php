@@ -1,7 +1,7 @@
-<nav class="flex items-center my-5 gap-6">
+<nav class="flex items-center mt-6 mb-4 mx-6 gap-6">
     <!-- Icon Kalender -->
     <a href="/kalender">
-        <svg class="w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#624DE3">
+        <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#624DE3">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
             <g id="SVGRepo_iconCarrier">
@@ -51,7 +51,40 @@
                     fill="#624DE3"></path>
             </g>
         </svg>
-        <span class="font-semibold">Admin</span>
-        <img src="{{ asset('images/profile.png') }}" class="w-12 h-12 border-4 border-primary rounded-full">
+        <div class=" justify-items-end">
+            <h1 class="text-sm font-semibold">VetLink Clinic</h1>
+            <p class="text-[12px] font-medium text-gray-700">Admin</p>
+        </div>
+        <div class="relative">
+            <div id="profile-icon" class="cursor-pointer hover:scale-110">
+                <img src="{{ asset('images/profile.png') }}" alt="Profile Icon"
+                    class="w-12 h-12 rounded-full border-4 border-primary" />
+            </div>
+            <div id="dropdown-menu"
+                class="absolute right-0 w-48 mt-1 bg-white rounded-lg shadow-lg hidden transition-all duration-200 z-50">
+                <a href="/profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Manage Profile</a>
+                <a href="/subscription" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Subscription
+                    Info</a>
+            </div>
+        </div>
     </div>
 </nav>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const profileIcon = document.getElementById("profile-icon");
+        const dropdownMenu = document.getElementById("dropdown-menu");
+
+        // Show dropdown menu on hover
+        profileIcon.addEventListener("mouseenter", () => {
+            dropdownMenu.classList.remove("hidden");
+        });
+
+        // Hide dropdown menu when mouse leaves the icon or dropdown
+        document.addEventListener("mousemove", (event) => {
+            if (!profileIcon.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.add("hidden");
+            }
+        });
+    });
+</script>
